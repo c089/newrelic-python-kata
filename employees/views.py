@@ -7,5 +7,5 @@ def list(request):
     return render(request, 'employees/list.html', {'employees': employees})
 
 def filtering(request):
-    employees = Employee.objects.all()
+    employees = Employee.objects.filter(name__startswith='X')
     return render(request, 'employees/filtering.html', {'employees': employees})
